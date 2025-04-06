@@ -4,6 +4,8 @@ const selectedUserData = require('./data'); // import the user data
 
 const app = express();
 const db = new sqlite3.Database(':memory:');
+const cors = require("cors");
+app.use(cors({ origin: "http://localhost:3000" }));
 
 // create a table w two columns for income and housing data
 db.run('CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, income JSON, housing JSON)');
