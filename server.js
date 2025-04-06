@@ -9,6 +9,8 @@ const path = require("path");
 const PORT = 5001;
 const app = express();
 
+app.use(cors({ origin: "http://localhost:3000" }));
+
 app.use(bodyParser.json());
 
 const {
@@ -16,6 +18,7 @@ const {
     HarmCategory,
     HarmBlockThreshold,
   } = require("@google/generative-ai");
+  
   const fs = require("node:fs");
   const mime = require("mime-types");
   
